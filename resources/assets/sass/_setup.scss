@@ -1,0 +1,47 @@
+@import "variables";
+@import url('https://fonts.googleapis.com/css?family=Lato|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-size: 14px;
+    font-family: $Roboto;
+    background: rgb(245, 241, 250);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+a {color: inherit;text-decoration: none;}
+
+ul{list-style: none;}
+
+%bread {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: white;
+    transition: 0.3s;
+}
+
+.loader {
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    &--text {
+        position: absolute;
+        width: 50px;
+    }
+}

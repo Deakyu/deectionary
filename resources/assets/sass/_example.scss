@@ -1,0 +1,70 @@
+.example {
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+    width: 90%;
+    padding: 9px 18px;
+    margin: 0 auto;
+    position: relative;
+    transition: all .3s ease-in-out;
+    opacity: 1;
+    &>* {cursor: pointer;}
+    @media (min-width:768px) {
+        width: 40%;
+    }
+    & + & {
+        margin: 18px auto 0;
+    }
+    &__example {
+        font-size: 14px;
+        line-height: calc(14px * 1.4);
+        font-family: $Lato;
+        margin-top: 9px;
+        text-indent: 18px;
+        word-break: break-all;
+        // color: $attention;
+    }
+    &__when {
+        font-size: 12px;
+        font-style: italic;
+        margin: 9px;
+        text-align: right;
+    }
+}
+
+.example:last-of-type {
+    margin-bottom: 18px;
+}
+
+.example-empty {
+    position: fixed;
+    top: 110px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+    font-family: $Lato;
+    font-weight: bolder;
+    font-size: 36px;
+    padding: 0 36px;
+    text-align: center;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, .3), 0px -1px 0px rgba(0, 0, 0, .7);
+}
+
+.btn.btn--primary.btn--create {
+    position: absolute;
+    top: 64px;
+    left: 18px;
+    z-index:0;
+    @media (min-width:768px) {
+        top:unset;
+        left:unset;
+        bottom: 36px;
+        right: 36px;
+        z-index: 1;
+        height: auto;
+        font-size: 30px;
+    }
+}

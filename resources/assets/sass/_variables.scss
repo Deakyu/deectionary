@@ -1,0 +1,24 @@
+$navColor: #4862A3;
+$sidebarColor: #343937;
+$successGreen: rgb(75, 181, 67);
+$errorRed: rgb(241, 98, 97);
+$attention: rgb(247,150,71);
+
+$openSans: 'Open Sans', sans-serif;
+$Roboto: 'Roboto', sans-serif;
+$Lato: 'Lato', sans-serif;
+
+@mixin placeholder($color) {
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $color;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+    color: $color;
+    }
+    &:-ms-input-placeholder { /* IE 10+ */
+    color: $color;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+    color: $color;
+    }
+}

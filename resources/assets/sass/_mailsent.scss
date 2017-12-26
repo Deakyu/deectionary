@@ -1,0 +1,41 @@
+.email-check {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    width: 90%;
+    height: 50vh;
+    margin: 0 auto;
+    @media (min-width:768px) {
+        width: 60%;
+    }
+    &__title {
+        text-align: center;
+        margin: 0;
+        margin-top: 36px;
+        padding: 9px 18px;
+        @media (min-width:768px) {
+            margin-top: 72px;
+        }
+    }
+    &__icon {
+        display: flex;
+        font-size: 36px;
+        margin: 36px 0 0;
+        justify-content: center;
+        @media (min-width:768px) {
+            font-size: 72px;
+            margin-top: 72px;
+        }
+        i.flyin {
+            left: -300px;
+            animation: fly .7s ease-in-out;
+            @keyframes fly {
+                0% {position: absolute;opacity: 0;}
+                75% {position: absolute;left: 70%; }
+                100% {position: absolute;left: 50%;opacity: 1;}
+            }
+        }
+    }
+}

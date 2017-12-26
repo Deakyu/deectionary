@@ -1,0 +1,114 @@
+.datepicker {
+    display: flex;
+    justify-content: flex-end;
+    padding: 18px;
+    &--compose {
+        width: 70%;
+        margin-left: 30%;
+        padding: 9px 18px;
+        justify-content: center;
+        border: 1px solid #F5F1FA;
+        input#dateInput {
+            text-align: center;
+        }
+        @media (min-width:768px) {
+            width: 40%;
+            margin-left: 60%;
+        }
+    }
+    button {
+        font-weight: bold;
+        margin-left: 9px;
+        background: none;
+        border: none;
+        outline: none;
+        font-size: 18px;
+    }   
+    input {
+        outline: none;
+        border: none;
+        background: white;
+    }
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        display: none;
+    }
+}
+.word-marked {
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+    width: 90%;
+    padding: 9px 18px;
+    margin: 0 auto;
+    position: relative;
+    transition: all .3s ease-in-out;
+    opacity: 1;
+    &>* {cursor: pointer;}
+    @media (min-width:768px) {
+        width: 40%;
+    }
+    &.deleted {
+        // only for effect
+        transform: translateX(-50%);
+        // height: 0;
+        opacity: 0;
+    }
+    &.removed {
+        // actually delete
+        display: none;
+    }
+    &__close-btn {
+        z-index:10000;
+        background: transparent;
+        outline: none;
+        border: none;
+        position: absolute;
+        top: 9px;
+        right: 9px;
+        font-size: 24px;
+        font-weight: bolder;
+        color: rgba(0, 0, 0, 0.19);
+        text-align: center;
+    }
+    & + & {
+        margin: 18px auto 0;
+    }
+    &__word {
+        font-family: $Lato;
+        margin-top: 9px;
+        color: $attention;
+    }
+    &__definition {
+        text-indent: 18px;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: calc(14px * 1.42857);
+    }
+    &__when {
+        font-size: 12px;
+        font-style: italic;
+        margin: 9px;
+        text-align: right;
+    }
+}
+.word-marked:last-of-type {
+    margin-bottom: 18px;
+}
+
+.word-empty {
+    position: fixed;
+    top: 110px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+    font-family: $Lato;
+    font-weight: bolder;
+    font-size: 36px;
+    padding: 0 36px;
+    text-align: center;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, .3), 0px -1px 0px rgba(0, 0, 0, .7);
+}

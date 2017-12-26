@@ -1,0 +1,129 @@
+.word {
+    position: relative;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.09) 0 1px 0;
+    margin: 36px auto;
+    padding: 9px;
+    width: 90%;
+    @media (min-width:768px) {
+        width: 40%;
+    }
+    &__like, &__speak {
+        margin: 0;
+        padding: 0;
+        background: transparent;
+        border: none;
+        outline: none;
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        font-size: 12px;
+        padding: 0 9px;
+        color: $errorRed;
+        height: 30px;
+        border-radius: 6px;
+        border: 1px solid $errorRed;
+        // background: rgba(241, 98, 97, 0.8);
+        cursor: pointer;
+        i{transform: translateY(1px);}
+        &.liked {
+            background: rgba(241, 98, 97, 0.8);
+            color: white;
+            & span {
+                display: none;
+            }
+        }
+        div.wrapper {
+            width: 100%;
+            margin:0;
+            padding:0;
+            position: relative;
+        }
+        span.bookmark-tooltip {
+            display: block;
+            position: absolute;
+            top: -40px;
+            right: -35px;
+            padding: 6px;
+            border-radius: 6px;
+            color: #f3f3f3;
+            background: rgb(100, 100, 100);
+            opacity: 0;
+            animation: opacity 3s ease-in-out;
+            white-space: nowrap;
+            @keyframes opacity {
+                0%{opacity: 0;}
+                20%{opacity: 1;}
+                90%{opacity: 1;}
+                100%{opacity: 0;}
+            }
+            div.tooltip-wrapper {
+                position: relative;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 50%;
+                    top: calc(100% + 2px);
+                    background: rgb(100, 100, 100);
+                    transform: rotate(45deg);
+                    width: 6px;
+                    height: 6px;
+                    display: block;
+                }
+                &--undo {
+                    &::after {
+                        left: 65%;
+                    }
+                }
+            }
+        }
+    }
+    &__speak {
+        left: 18px;
+        color: $successGreen;
+        border: 1px solid $successGreen;
+        font-size: 14px;
+    }
+    &__title, &__pronunciation {
+        margin: 0;
+        margin-top: 18px;
+        text-align: center;
+    }
+    &__title {
+        font-weight: bolder;
+    }
+    &__pronunciation {
+        // position: relative;
+        display: flex;
+        justify-content: center;
+        margin-top: 9px;
+        color: $successGreen;
+    }
+    &__img {
+        width: 100%;
+        margin: 18px 0;
+        &>a {width: 100%;}
+        &>a>img {
+            display: block;
+            width: 100%;
+        }
+    }
+    
+    .definition {
+        padding: 4px 9px;
+        margin-top: 9px;
+        &__title, &__example {
+            margin: 0;
+            font-size: 13px;
+            font-weight: normal;
+        }
+        &__example {
+            margin-top: 4px;
+            padding-left: 24px;
+            color: 	#FFA07A;
+        }
+    }
+}

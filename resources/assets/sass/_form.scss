@@ -1,0 +1,166 @@
+.form {
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.09) 0 1px 0;
+    width: 70%;
+    margin: 36px auto;
+    padding: 18px;
+    &--compose {
+        width: 90%;
+        @media (min-width: 768px) {
+            width: 60% !important;
+        }
+    }
+    @media (min-width:768px) {
+        width: 40%;
+    }
+    &__tags {
+        display: inline-block;
+        padding: 4px 8px;
+        border-radius: 2px;
+        margin-right: 6px;
+        margin-bottom: 6px;
+        color: white;
+        background: rgba(0, 0, 0, 0.4);
+        a {
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 8px;
+        }
+    }
+    &__title {
+        text-align: center;
+    }
+    &__group {
+        margin-top: 18px;
+        text-align: center;
+        div.text-wrapper {
+            position: relative;
+        }
+    }
+    &__control {
+        font-size: 12px;
+        width: 100%;
+        display: block;
+        background: #fafafa;
+        border: none;
+        border-radius: 2px;
+        box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+        outline: none;
+        padding: 8px;
+        text-align: center;
+        &--elastic {
+            height: 100px;
+            transition: height .3s ease-in-out;
+            text-align: justify;
+            resize: both;
+            font-family: $Lato;
+            &:focus {
+                height: 200px;
+            }            
+        }
+        &:focus {
+            background: rgba(255, 245, 254, 0.31);
+        }
+        &.err {
+            background: rgba(241, 98, 97, 0.8);
+            color: white;
+        }
+        &.disabled {
+            background: rgba(150, 150, 150, 0.5);
+            cursor: not-allowed;
+        }
+        .word-tooltip {
+            position: relative;
+            display: inline;
+            &__definition {
+                position: absolute;
+                left: 0;
+                width: 150px;
+                border-radius: 6px;
+                padding: 6px;
+                background: rgba(247, 150, 71, 0.95);
+                color: white;
+                display: none;
+                z-index: 2;
+            }
+        }
+    } // form__control end
+    &__signup-link {
+        display: flex;
+        justify-content: center;
+        margin-top: 9px;
+        color: #4862A3;
+        text-decoration: underline;
+    }
+}
+
+.btn {
+    border: none;
+    border-radius: 2px;
+    font-size: 14px;
+    height: 30px;
+    padding: 4px 18px;
+    cursor: pointer;
+    background: #f4f4f4;
+    color: #484746;
+    box-shadow: 0 1px darken(#f4f4f4, 13%);
+    outline: none;
+    text-decoration: none;
+    display: inline-block;
+    line-height: 1.5em;
+    // for ripple effect
+    position: relative;
+    overflow: hidden;
+    &:active {
+        box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    }
+    &:disabled {
+        opacity: 0.75;
+        cursor: not-allowed;
+        border: 1px solid $errorRed;
+        background: rgba(241, 98, 97, 0.8);
+        box-shadow: none;
+    }
+    &--primary {
+        background: $successGreen;
+        color: white;
+        box-shadow: 0 1px darken($successGreen, 13%);
+    }
+    &--danger {
+        background: $errorRed;
+        color: white;
+        box-shadow: 0 1px darken($errorRed, 13%);
+    }
+    // Ripple effect
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 40%;
+        width: 7px;
+        height: 5px;
+        background: rgba(255, 255, 255, .5);
+        opacity: 0;
+        border-radius: 100%;
+        transform: scale(1, 1) translate(-50%);
+        transform-origin: 50% 50%;
+    }
+    &::focus:not(::active)::after {
+        animation: ripple .3s ease-out;
+    }
+
+    @keyframes ripple {
+        0% {transform: scale(0, 0); opacity: 1;}
+        30% {transform: scale(25, 25); opacity: 1;}
+        100% {transform: scale(40, 40); opacity: 0;}
+    }
+}
+
+.error {
+    &__control {
+        color: $errorRed;
+    }
+    &__bg {
+        background: #ffcdd2 !important;
+    }
+}
